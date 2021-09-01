@@ -1,0 +1,9 @@
+.header {
+	/* Sticky Header - sticks to top with scroll down */
+}
+
+.header__left > img {
+	/* when resizing, keep the aspect ratio */
+	object-fit: contain;
+	height: 40px;
+}
