@@ -10,4 +10,4 @@
             - https://material-ui.com/components/material-icons/
 
 # Screenshot Reference
-![linked-in-clone-screenshot](https://github.com/kawgh1/linkedin-clone/blob/main/linkedin-clone-screenshot1.png)
+[linked-in-clone-screenshot]!(https://github.com/kawgh1/linkedin-clone/blob/main/linkedin-clone-screenshot1.png)
