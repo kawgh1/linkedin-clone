@@ -8,3 +8,6 @@
     - **npm install @material-ui/icons**
         - Search Material UI Icons
             - https://material-ui.com/components/material-icons/
+
+# Screenshot Reference
+!(https://github.com/kawgh1/linkedin-clone/blob/main/linkedin-clone-screenshot.png)
