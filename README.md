@@ -1,4 +1,4 @@
-# Linkedin Clone - Course by Sonny Sangha [here]!(https://www.youtube.com/watch?v=tbvguOj8C-o)
+# Linkedin Clone - Course by Sonny Sangha [here](https://www.youtube.com/watch?v=tbvguOj8C-o)
 
 - **npx create-react-app linkedin-clone --template redux**
 - Install Firebase
@@ -10,4 +10,4 @@
             - https://material-ui.com/components/material-icons/
 
 # Screenshot Reference
-[linked-in-clone-screenshot](https://github.com/kawgh1/linkedin-clone/blob/main/linkedin-clone-screenshot1.png)
+[linked-in-clone-screenshot]!(https://github.com/kawgh1/linkedin-clone/blob/main/linkedin-clone-screenshot1.png)
