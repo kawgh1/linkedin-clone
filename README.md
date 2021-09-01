@@ -1,4 +1,4 @@
-# Linkedin Clone - Course by Sonny Sangha
+# Linkedin Clone - Course by Sonny Sangha [here]!(https://www.youtube.com/watch?v=tbvguOj8C-o)
 
 - **npx create-react-app linkedin-clone --template redux**
 - Install Firebase
