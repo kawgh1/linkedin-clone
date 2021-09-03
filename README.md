@@ -15,6 +15,10 @@
     - **npm install @material-ui/icons**
         - Search Material UI Icons
             - https://material-ui.com/components/material-icons/
+- Install React Flip Move
+    - **npm install --save react-flip-move**
+        - nice animations for list components (user posts)
+        - https://joshwcomeau.github.io/react-flip-move/
 
 ## Things I Added
 - ### Added Date & Time to user posts
