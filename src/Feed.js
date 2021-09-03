@@ -69,9 +69,9 @@ function Feed() {
     }
 
     // Helper function to convert Firebase timestamp to Date object (String) for display
-    function convertTimestamp(timestamp) {
+    function convertTimestamp(firebaseTimestamp) {
 
-        const newTimestamp = new Date(timestamp.toDate()).toUTCString();
+        const newTimestamp = new Date(firebaseTimestamp.toDate()).toUTCString();
         
 
         return newTimestamp;
@@ -114,7 +114,7 @@ function Feed() {
                     description={description}
                     message={message}
                     photoUrl={photoUrl}
-                    timestamp={convertTimestamp(timestamp)}
+                    timestamp={timestamp?convertTimestamp(timestamp):''}
                 />
             ))}
             </FlipMove>

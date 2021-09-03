@@ -111,6 +111,10 @@ function Login() {
                         Register Now
                     </span>
                 </p>
+
+                <p style={{color: 'green'}}>
+                    **Please use email 'test@test.com' and password 'linkedin' for demo purposes**
+                </p>
         </div>
     );
 }

@@ -15,6 +15,7 @@ import { useSelector } from 'react-redux';
 function Header() {
     // REDUX
     const dispatch = useDispatch();
+    const user = useSelector(selectUser);
 
 
     // Logout Function when click on Avatar
@@ -26,38 +27,35 @@ function Header() {
     }
 
     return (
-        <div className='header'>
+                <div className='header'>
 
-            
-            <div className="header__left">
+                <div className="header__left">
 
-                <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="" />
-                <div className="header__search">
-                    {/* Search Icon */}
-                    <SearchIcon />
-                    <input placeholder='Search' type="text" />
+                    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="" />
+                    <div className="header__search">
+                        {/* Search Icon */}
+                        <SearchIcon />
+                        <input placeholder='Search' type="text" />
+                    </div>
                 </div>
-            </div>
 
-            <div className="header__right">
-                <HeaderOption Icon={HomeIcon}title='Home' />
-                <HeaderOption Icon={SupervisorAccountIcon}title='My Network' />
-                <HeaderOption Icon={BusinessCenterIcon}title='Jobs' />
-                <HeaderOption Icon={ChatIcon}title='Messaging' />
-                <HeaderOption Icon={NotificationsIcon}title='Notifications' />
-                {/* <HeaderOption 
-                    avatar={'https://compassionate-leakey-e9b16b.netlify.app/images/IG_Sonny.jpeg'} 
-                    title='me'
-                    onClick={logoutOfApp}
-                /> */}
-                <HeaderOption 
-                avatar={true}
-                    title='me'
-                    onClick={logoutOfApp}
-                />
+                    <div className="header__right">
+                    <HeaderOption Icon={HomeIcon}title='Home' />
+                    <HeaderOption Icon={SupervisorAccountIcon}title='My Network' />
+                    <HeaderOption Icon={BusinessCenterIcon}title='Jobs' />
+                    <HeaderOption Icon={ChatIcon}title='Messaging' />
+                    <HeaderOption Icon={NotificationsIcon}title='Notifications' />
+                 
+                    <HeaderOption 
+                    avatar={user ? true: false}
+                        title={user ? 'Me': ''}
+                        onClick={logoutOfApp}
+                    />
 
-            </div>
-        </div>
+                    </div>
+                    </div>
+
+       
     )
 }
 
