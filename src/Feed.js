@@ -10,7 +10,13 @@ import Post from './Post'
 
 function Feed() {
 
-    const [post, setPosts] = useState([]);
+    const [posts, setPosts] = useState([]);
+
+    const sendPost = event => {
+        event.preventDefault();
+
+    }
+
     return (
         <div className='feed'>
 
@@ -19,7 +25,7 @@ function Feed() {
                     <CreateIcon />
                     <form>
                         <input type='text' />
-                        <button type='submit'>Send</button>
+                        <button onClick={sendPost}type='submit'>Send</button>
                     </form>
                 </div>
 
@@ -36,7 +42,10 @@ function Feed() {
             </div>
 
            {/* FEED POSTS */}
-            <Post name='Sonny Sangha' description='this is a test' message='this is a message'  />
+            {/* <Post name='Sonny Sangha' description='this is a test' message='this is a message'  /> */}
+            {posts.map((post) => {
+                <Post  />
+            })}
             
         </div>
     )

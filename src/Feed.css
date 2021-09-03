@@ -31,6 +31,9 @@
 	margin-left: 10px;
 	outline-width: 0;
 	font-weight: 600;
+	outline: none;
+	border: none;
+	background: none;
 }
 
 .feed__input > form > button {
