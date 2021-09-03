@@ -20,7 +20,13 @@ function App() {
   useEffect(() => {
     auth.onAuthStateChanged(userAuth => {
       if (userAuth) {
-        // user is logged in
+        // user is logged in - assign Firebase userAuth props to our REDUX user
+        dispatch(login({
+            email: userAuth.email,
+            uid: userAuth.uid,
+            displayName: userAuth.displayName,
+            photoUrl: userAuth.photoURL
+        }));
 
       } else {
         // user is logged out
