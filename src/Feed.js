@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import './Feed.css'
 import CreateIcon from '@material-ui/icons/Create'
 import InputOption from './InputOption'
@@ -7,10 +7,29 @@ import SubscriptionsIcon from '@material-ui/icons/Subscriptions'
 import EventNoteIcon from '@material-ui/icons/EventNote'
 import CalendarViewDayIcon from '@material-ui/icons/CalendarViewDay'
 import Post from './Post'
+import { db } from './firebase'
 
 function Feed() {
 
     const [posts, setPosts] = useState([]);
+
+    // useEffect fires code when the Feed Component loads
+    // and whenever the Feed Component re-renders, *IF* we don't pass in a second argument
+
+    // if we pass in an empty array [], as second arg, then useEffect only fires on initial load and never again
+    useEffect(() => {
+
+        // so when useEffect runs, go to the firestore database and grab a current snapshot of all the posts in the posts table
+        db.collection('posts').onSnapshot((snapshot) => 
+            // then take those posts from the database and pass them into our App's state with setPosts()
+            setPosts(snapshot.docs.map((doc) => (       // open parenthesis means implicit return -> return what ever is mapped over
+                {
+                    id: doc.id,
+                    data: doc.data()
+                }
+            ))
+        ));
+    }, []); 
 
     const sendPost = event => {
         event.preventDefault();
