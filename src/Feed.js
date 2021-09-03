@@ -28,7 +28,7 @@ function Feed() {
 
     useEffect(() => {
 
-            db.collection('posts').onSnapshot((snapshot) => 
+            db.collection('posts').orderBy('timestamp', 'desc').onSnapshot((snapshot) => 
                 
                     setPosts(snapshot.docs.map((doc) => (       
                         {
@@ -49,8 +49,10 @@ function Feed() {
             description: 'this is a test',
             message: input,
             photoUrl: '',
-            timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+            timestamp: firebase.firestore.FieldValue.serverTimestamp()
         });
+
+        setInput('');
 
     }
 
@@ -62,7 +64,7 @@ function Feed() {
                     <CreateIcon />
                     <form>
                         <input value={input} onChange={event => setInput(event.target.value)} type='text' />
-                        <button onClick={sendPost}type='submit'>Send</button>
+                        <button onClick={sendPost} type='submit'>Send</button>
                     </form>
                 </div>
 
@@ -80,7 +82,7 @@ function Feed() {
 
            {/* FEED POSTS */}
             {/* <Post name='Sonny Sangha' description='this is a test' message='this is a message'  /> */}
-            {posts.map(({id, data: { name, description, message, photoUrl }}) => {
+            {posts.map(({id, data: { name, description, message, photoUrl }}) => (
                 <Post  
                     key={id}
                     name={name}
@@ -88,7 +90,7 @@ function Feed() {
                     message={message}
                     photoUrl={photoUrl}
                 />
-            })}
+            ))}
             
         </div>
     )
