@@ -7,32 +7,50 @@ import SubscriptionsIcon from '@material-ui/icons/Subscriptions'
 import EventNoteIcon from '@material-ui/icons/EventNote'
 import CalendarViewDayIcon from '@material-ui/icons/CalendarViewDay'
 import Post from './Post'
-import { db } from './firebase'
+import { db } from "./firebase";
+import firebase from 'firebase/app';
+
 
 function Feed() {
 
     const [posts, setPosts] = useState([]);
+    // user post input state
+    const [input, setInput] = useState('');
 
     // useEffect fires code when the Feed Component loads
     // and whenever the Feed Component re-renders, *IF* we don't pass in a second argument
 
     // if we pass in an empty array [], as second arg, then useEffect only fires on initial load and never again
+    // so when useEffect runs, go to the firestore database and grab a current SNAPSHOT of all the posts in the posts table
+    // then take those posts from the firestore database and pass them into our App's state with setPosts()
+    // snapshot.docs.map((doc) => (...)) open parenthesis means implicit return -> return what ever is mapped over
+
+
     useEffect(() => {
 
-        // so when useEffect runs, go to the firestore database and grab a current snapshot of all the posts in the posts table
-        db.collection('posts').onSnapshot((snapshot) => 
-            // then take those posts from the database and pass them into our App's state with setPosts()
-            setPosts(snapshot.docs.map((doc) => (       // open parenthesis means implicit return -> return what ever is mapped over
-                {
-                    id: doc.id,
-                    data: doc.data()
-                }
-            ))
-        ));
+            db.collection('posts').onSnapshot((snapshot) => 
+                
+                    setPosts(snapshot.docs.map((doc) => (       
+                        {
+                            id: doc.id,
+                            data: doc.data()
+                        }
+                    ))
+            ));
     }, []); 
 
     const sendPost = event => {
         event.preventDefault();
+
+        // every time user clicks sendPost - pull a snapshot from the firestore database and update posts []
+        // use the server timestamp, not the user local timestamp
+        db.collection('posts').add({
+            name: 'Sonny Sangha',
+            description: 'this is a test',
+            message: input,
+            photoUrl: '',
+            timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+        });
 
     }
 
@@ -43,7 +61,7 @@ function Feed() {
                 <div className="feed__input">
                     <CreateIcon />
                     <form>
-                        <input type='text' />
+                        <input value={input} onChange={event => setInput(event.target.value)} type='text' />
                         <button onClick={sendPost}type='submit'>Send</button>
                     </form>
                 </div>
@@ -62,8 +80,14 @@ function Feed() {
 
            {/* FEED POSTS */}
             {/* <Post name='Sonny Sangha' description='this is a test' message='this is a message'  /> */}
-            {posts.map((post) => {
-                <Post  />
+            {posts.map(({id, data: { name, description, message, photoUrl }}) => {
+                <Post  
+                    key={id}
+                    name={name}
+                    description={description}
+                    message={message}
+                    photoUrl={photoUrl}
+                />
             })}
             
         </div>
