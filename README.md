@@ -2,8 +2,8 @@
 ## Node 14.17.6
 ## Firebase ^8.2.0
 
-- ## **Notes from Sonny**
-    - ## **"React Context API is great, but REDUX is what's used in production. Use Redux."**
+## **--Notes from Sonny--**
+  - ## **-- "React Context API is great, but REDUX is what's used in production. USE REDUX."**
 
 
 ## Tools Used
