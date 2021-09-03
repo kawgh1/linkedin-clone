@@ -66,12 +66,13 @@ function Feed() {
 
     }
 
+    // Helper function to convert Firebase timestamp to Date object (String) for display
     function convertTimestamp(timestamp) {
 
         const newTimestamp = new Date(timestamp.toDate()).toUTCString();
         
 
-        return newTimestamp.toString();
+        return newTimestamp;
     }
 
     return (

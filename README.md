@@ -17,33 +17,33 @@
             - https://material-ui.com/components/material-icons/
 
 ## Things I Added
-- Added Date & Time to user posts
+- ### Added Date & Time to user posts
     - Take the Firebase timestamp property from the user post
 
-File: Feed.js
-    ...
-    ...
-    function convertTimestamp(timestamp) {
+    File: Feed.js
+        ...
+        ...
+        function convertTimestamp(timestamp) {
 
-        const newTimestamp = new Date(timestamp.toDate()).toUTCString();
-        
-        return newTimestamp.toString();
-    }
-    ...
-    ...
-    {/* FEED POSTS */}
-            {posts.map(({id, data: { name, description, message, photoUrl, timestamp }}) => (
-                
+            const newTimestamp = new Date(timestamp.toDate()).toUTCString();
+            
+            return newTimestamp;
+        }
+        ...
+        ...
+        {/* FEED POSTS */}
+                {posts.map(({id, data: { name, description, message, photoUrl, timestamp }}) => (
+                    
 
-                <Post  
-                    key={id}
-                    name={name}
-                    description={description}
-                    message={message}
-                    photoUrl={photoUrl}
-                    timestamp={convertTimestamp(timestamp)}
-                />
-            ))}
+                    <Post  
+                        key={id}
+                        name={name}
+                        description={description}
+                        message={message}
+                        photoUrl={photoUrl}
+                        timestamp={convertTimestamp(timestamp)}
+                    />
+                ))}
 
 # Screenshot Reference
 ![linked-in-clone-screenshot](https://github.com/kawgh1/linkedin-clone/blob/main/linkedin-clone-screenshot1.png)

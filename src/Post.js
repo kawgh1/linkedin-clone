@@ -14,7 +14,7 @@ function Post({name, description, message, photoUrl, timestamp}) {
                 <Avatar />
                 <div className="post__info">
                     <h2>{name}</h2>
-                    <p>{description}</p>
+                    {/* <p>{description}</p> */}
                     <p>{timestamp}</p>
                 </div>
 
