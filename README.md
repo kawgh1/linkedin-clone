@@ -27,7 +27,7 @@
                     });
 
             }
-            
+
         - **Did not realize that line was the problem for some time**
         - Getting error
             **./src/Feed.js
@@ -35,8 +35,9 @@
     - **Nothing** to do with the Firebase version installed, Node or installing Firebase in the 'project/src' folder
     - **Solution:** In Feed.js, change
         - import firebase from 'firebase' to
-        - **import firebase from 'firebase/app'
+        - **import firebase from 'firebase/app'**
         - I believe the problem was I was trying to call getTimestamp() from firebase itself and not my particular app
+        - [reference](https://stackoverflow.com/questions/65658510/export-firestore-imported-as-firebase-was-not-found-in-firebase-after-up)
     
 
 - ## Code Snippets
