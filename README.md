@@ -1,6 +1,7 @@
 # Linkedin Clone - Course by Sonny Sangha [here](https://www.youtube.com/watch?v=tbvguOj8C-o)
-## Node 14.17.6
-## Firebase ^8.2.0
+## Live site [here](https://linkedin-clone-3645e.web.app/)
+### Node 14.17.6
+### Firebase ^8.2.0
 
 ## **--Notes from Sonny--**
   - ## **-- "React Context API is great, but REDUX is what's used in production. USE REDUX."**
