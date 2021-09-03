@@ -1,4 +1,4 @@
-import firebase from 'firebase'
+import firebase from 'firebase';
 
 const firebaseConfig = {
 
@@ -29,3 +29,4 @@ const firebaseConfig = {
   export { db, auth };
 
   // first place we connect to is in our Feed.js
+

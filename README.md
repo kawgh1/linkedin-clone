@@ -1,6 +1,6 @@
 # Linkedin Clone - Course by Sonny Sangha [here](https://www.youtube.com/watch?v=tbvguOj8C-o)
 ## Node 14.17.6
-## Firebase 9.0.1
+## Firebase ^8.2.0
 
 - **npx create-react-app linkedin-clone --template redux**
 - Install Firebase
