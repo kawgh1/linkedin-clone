@@ -14,9 +14,22 @@ function Login() {
     const dispatch = useDispatch();
 
     
-
+    // LOGIN
     const loginToApp = (event) => {
         event.preventDefault();
+
+        // FIREBASE - take Firebase User props and assign them to REDUX Store user props for display
+        auth.signInWithEmailAndPassword(email, password)
+        .then(userAuth => {
+            dispatch(
+                login({
+                    email: userAuth.user.email,
+                    uid: userAuth.user.uid,
+                    displayName: userAuth.user.displayName,
+                    profileUrl: userAuth.user.photoUrl
+                })
+            );
+        }).catch(error => alert(error));
         
 
     };

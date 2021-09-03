@@ -9,9 +9,14 @@ import CalendarViewDayIcon from '@material-ui/icons/CalendarViewDay'
 import Post from './Post'
 import { db } from "./firebase";
 import firebase from 'firebase';
+import { useSelector } from 'react-redux'
+import { selectUser } from './features/userSlice'
 
 
 function Feed() {
+
+    // REDUX
+    const user = useSelector(selectUser);
 
     const [posts, setPosts] = useState([]);
     // user post input state
@@ -45,15 +50,28 @@ function Feed() {
         // every time user clicks sendPost - pull a snapshot from the firestore database and update posts []
         // use the server timestamp, not the user local timestamp
         db.collection('posts').add({
-            name: 'Sonny Sangha',
-            description: 'this is a test',
+            // name: 'Sonny Sangha',
+            // description: 'this is a test',
+            // message: input,
+            // photoUrl: '',
+            // timestamp: firebase.firestore.FieldValue.serverTimestamp()
+            name: user.displayName,
+            description: user.email,
             message: input,
-            photoUrl: '',
+            photoUrl: user.photoUrl || '',
             timestamp: firebase.firestore.FieldValue.serverTimestamp()
         });
 
         setInput('');
 
+    }
+
+    function convertTimestamp(timestamp) {
+
+        const newTimestamp = new Date(timestamp.toDate()).toUTCString();
+        
+
+        return newTimestamp.toString();
     }
 
     return (
@@ -82,13 +100,16 @@ function Feed() {
 
            {/* FEED POSTS */}
             {/* <Post name='Sonny Sangha' description='this is a test' message='this is a message'  /> */}
-            {posts.map(({id, data: { name, description, message, photoUrl }}) => (
+            {posts.map(({id, data: { name, description, message, photoUrl, timestamp }}) => (
+                
+
                 <Post  
                     key={id}
                     name={name}
                     description={description}
                     message={message}
                     photoUrl={photoUrl}
+                    timestamp={convertTimestamp(timestamp)}
                 />
             ))}
             
