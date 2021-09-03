@@ -17,10 +17,21 @@
 - ## Issues
     - Had a little trouble with this line
     - **timestamp: firebase.firestore.FieldValue.serverTimestamp()** in Feed.js
-    - - **Did not realize that line was the problem for some time**
+  
+            const sendPost = event => {
+                    
+                    db.collection('posts').add({
+                        ...
+                        ...
+                        timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+                    });
+
+            }
+            
+        - **Did not realize that line was the problem for some time**
         - Getting error
-            ./src/Feed.js
-            Module not found: Can't resolve 'firebase' in 'C:\Users\--\Desktop\linkedin-clone\src'
+            **./src/Feed.js
+            Module not found: Can't resolve 'firebase' in 'C:\Users\username\Desktop\linkedin-clone\src'**
     - **Nothing** to do with the Firebase version installed, Node or installing Firebase in the 'project/src' folder
     - **Solution:** In Feed.js, change
         - import firebase from 'firebase' to
