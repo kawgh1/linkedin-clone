@@ -5,6 +5,10 @@
 /.pnp
 .pnp.js
 
+.firebase
+.github/workflows
+.github/*
+
 # testing
 /coverage
 
