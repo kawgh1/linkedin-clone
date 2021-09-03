@@ -12,6 +12,24 @@ function App() {
 
   // pull user object out from REDUX, see src/features/userSlice/Selectors
   const user = useSelector(selectUser);
+  // REDUX
+  const dispatch = useDispatch();
+
+  // persist user log in to Firebase from app redux state
+  // onAuthChange is a listener that listens for any change in Auth state, login, logout, did the user change?
+  useEffect(() => {
+    auth.onAuthStateChanged(userAuth => {
+      if (userAuth) {
+        // user is logged in
+
+      } else {
+        // user is logged out
+        dispatch(logout());
+      }
+    })
+  }, []);
+
+
   
 
   return (
