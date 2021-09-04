@@ -3,6 +3,7 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	height: 100vh;
 }
 
 .app__body {
@@ -11,4 +12,26 @@
 	margin-left: 20px;
 	margin-right: 20px;
 	height: 100%;
+}
+
+@media screen and (min-width: 1000px) {
+	.app__body {
+		width: 90%;
+		max-width: 1600px;
+	}
+}
+
+@media screen and (max-width: 700px) {
+	.app__body {
+		width: 90%;
+		max-width: 600px;
+		margin: auto;
+
+		flex-direction: column;
+		order: 1;
+	}
+
+	.app {
+		height: fit-content;
+	}
 }

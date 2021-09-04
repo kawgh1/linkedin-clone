@@ -8,6 +8,7 @@ import Header from "./Header";
 import Login from "./Login";
 import Sidebar from "./Sidebar";
 import Widgets from "./Widgets";
+import Footer from "./Footer";
 
 function App() {
 
@@ -59,6 +60,11 @@ function App() {
             <Feed />
             {/* Widgets */}
             <Widgets />
+
+            {/* Footer for Mobile only*/}
+            <Footer />
+            
+            
             </div>
       )}
     </div>

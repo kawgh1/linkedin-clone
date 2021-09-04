@@ -22,8 +22,7 @@
         - https://joshwcomeau.github.io/react-flip-move/
 
 ## Things I Added
-- ### Conditional Styling to display Avatar in Header only when user logged in
-- ### General Styling for Desktop
+- ### Complete Mobile View Makeover
 - ### Added Date & Time to user posts
     - Take the Firebase timestamp property from the user post
 

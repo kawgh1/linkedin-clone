@@ -18,6 +18,6 @@
 
 .headerOption__icon {
 	object-fit: contain;
-	height: 25px !important; /* using important to override Material UI styles*/
-	width: 25px !important;
+	height: 30px !important; /* using important to override Material UI styles*/
+	width: 30px !important;
 }

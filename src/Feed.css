@@ -1,6 +1,6 @@
 .feed {
-	flex: 0.6;
-	margin: 0 20px;
+	flex: 0.4;
+	margin: 0px 20px;
 }
 
 .feed__inputContainer {
@@ -10,6 +10,9 @@
 	border-radius: 10px;
 	margin-bottom: 20px;
 	border: 1px solid lightgray;
+	top: 80px;
+	position: sticky;
+	z-index: 100;
 }
 
 .feed__input {
@@ -23,7 +26,6 @@
 
 .feed__input > form {
 	display: flex;
-	width: 100%;
 }
 
 .feed__input > form > input {
@@ -44,4 +46,40 @@
 .feed__inputOptions {
 	display: flex;
 	justify-content: space-evenly;
+}
+
+.posts {
+	height: 60vh;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+@media screen and (max-width: 700px) {
+	.feed {
+		order: 5;
+		margin-bottom: 50px;
+	}
+
+	.feed__input {
+		border: 1px solid lightgray;
+		border-radius: 30px;
+		display: flex;
+		padding: 5px;
+		margin: 5px;
+		color: gray;
+		padding-left: 5px;
+	}
+
+	.posts {
+		padding-top: 35px;
+		height: 55vh;
+		overflow-x: hidden;
+		overflow-y: auto;
+	}
+
+	.feed__inputContainer {
+		padding: 1px;
+		padding-bottom: 2px;
+		margin-bottom: 12px;
+	}
 }

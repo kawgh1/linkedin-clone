@@ -103,21 +103,29 @@ function Feed() {
 
            {/* FEED POSTS */}
            {/* React Flip Move */}
-           <FlipMove>
-            {/* <Post name='Sonny Sangha' description='this is a test' message='this is a message'  /> */}
-            {posts.map(({id, data: { name, description, message, photoUrl, timestamp }}) => (
-                
 
-                <Post  
-                    key={id}
-                    name={name}
-                    description={description}
-                    message={message}
-                    photoUrl={photoUrl}
-                    timestamp={timestamp?convertTimestamp(timestamp):''}
-                />
-            ))}
-            </FlipMove>
+           <div className='posts'>
+                <FlipMove>
+                    {/* <Post name='Sonny Sangha' description='this is a test' message='this is a message'  /> */}
+                    
+                    {posts.map(({id, data: { name, description, message, photoUrl, timestamp }}) => (
+                        
+
+                        <Post  
+                            key={id}
+                            name={name}
+                            description={description}
+                            message={message}
+                            photoUrl={photoUrl}
+                            timestamp={timestamp?convertTimestamp(timestamp):''}
+                        />
+                    ))}
+                    </FlipMove>
+            </div>
+            
+            <br />
+
+           
         </div>
         
     )

@@ -37,23 +37,37 @@ function Header() {
                         <SearchIcon />
                         <input placeholder='Search' type="text" />
                     </div>
+
+                    
+                    
+
                 </div>
 
                     <div className="header__right">
-                    <HeaderOption Icon={HomeIcon}title='Home' />
-                    <HeaderOption Icon={SupervisorAccountIcon}title='My Network' />
-                    <HeaderOption Icon={BusinessCenterIcon}title='Jobs' />
-                    <HeaderOption Icon={ChatIcon}title='Messaging' />
-                    <HeaderOption Icon={NotificationsIcon}title='Notifications' />
-                 
-                    <HeaderOption 
-                    avatar={user ? true: false}
-                        title={user ? 'Me': ''}
-                        onClick={logoutOfApp}
-                    />
+
+                        <span className='desktop'>
+                            <HeaderOption  Icon={HomeIcon}title='Home' />
+                            <HeaderOption  Icon={SupervisorAccountIcon}title='Network' />
+                            <HeaderOption  Icon={BusinessCenterIcon}title='Jobs' />
+                            <HeaderOption  Icon={ChatIcon}title='Messaging' />
+                            <HeaderOption  Icon={NotificationsIcon}title='Notifications' />
+
+                        </span>
+                            
+                        <p>
+                        <HeaderOption 
+                                className='mobile'
+                                avatar={user ? true: false}
+                                    title={user ? 'Me': ''}
+                                    onClick={logoutOfApp}
+                            />
+                        </p>
+                            
 
                     </div>
-                    </div>
+
+                   
+        </div>
 
        
     )
