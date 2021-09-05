@@ -105,16 +105,16 @@ function Login() {
 
                 </form>
 
-                <p>
+                <span>
                     Not a member ? {"  "}
                     <span className='login__register' onClick={register}>
                         Register Now
                     </span>
-                </p>
+                </span>
 
-                <p style={{color: 'green'}}>
+                <span style={{color: 'green'}}>
                     **Please use email 'test@test.com' and password 'linkedin' for demo purposes**
-                </p>
+                </span>
         </div>
     );
 }

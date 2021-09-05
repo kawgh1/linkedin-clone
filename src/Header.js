@@ -11,6 +11,7 @@ import { useDispatch } from 'react-redux';
 import { auth } from './firebase';
 import { logout, selectUser } from './features/userSlice';
 import { useSelector } from 'react-redux';
+import { render } from '@testing-library/react';
 
 function Header() {
     // REDUX
@@ -26,7 +27,10 @@ function Header() {
 
     }
 
-    return (
+    if(user){
+         return (
+
+        
                 <div className='header'>
 
                 <div className="header__left">
@@ -68,9 +72,10 @@ function Header() {
 
                    
         </div>
+    );
+         };
 
-       
-    )
+    return <div className='header' />;
 }
 
 export default Header
